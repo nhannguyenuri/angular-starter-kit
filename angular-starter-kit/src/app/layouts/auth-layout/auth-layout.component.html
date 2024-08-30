@@ -1,0 +1,15 @@
+<section class="w-full h-dvh grid grid-cols-12">
+  <header class="col-span-full h-[4rem]">
+    <app-nav-bar />
+  </header>
+
+  <aside class="col-span-4 lg:col-span-2 h-[calc(100dvh-4rem)]" [ngClass]="{ '!hidden': !appNavService.isShowNavList() }">
+    <app-nav-list />
+  </aside>
+
+  <main class="col-span-8 lg:col-span-10 h-[calc(100dvh-4rem)]" [ngClass]="{ '!col-span-full': !appNavService.isShowNavList() }">
+    <section class="h-full w-full">
+      <router-outlet></router-outlet>
+    </section>
+  </main>
+</section>

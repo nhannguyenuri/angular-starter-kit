@@ -1,0 +1,55 @@
+<section class="w-dvw h-dvh flex items-center justify-center">
+  <mat-card class="p-4 flex flex-col gap-4 w-10/12 sm:w-8/12 md:w-6/12 lg:w-4/12 2xl:w-3/12">
+    <mat-card-header class="justify-center">
+      <mat-card-title>Sign In</mat-card-title>
+    </mat-card-header>
+
+    <mat-card-content>
+      <form [formGroup]="signInForm" class="flex flex-col gap-4">
+        @if (errorMessage()) {
+          <section class="flex flex-row items-center gap-4 text-red-600">
+            <mat-icon>error</mat-icon>
+            <p id="error-message">{{ errorMessage() }}</p>
+          </section>
+        }
+
+        <mat-form-field class="w-full">
+          <mat-label>Username</mat-label>
+          <input matInput type="text" name="username" id="username" autocomplete="off" formControlName="username" autofocus required placeholder="Username" />
+          @if (undefined | conditional: isUsernameValid.bind(this)) {
+            <mat-error>Username is required.</mat-error>
+          }
+        </mat-form-field>
+
+        <mat-form-field class="w-full">
+          <mat-label>Password</mat-label>
+          <input
+            matInput
+            [type]="isShowPassword() ? 'text' : 'password'"
+            name="password"
+            id="password"
+            autocomplete="off"
+            formControlName="password"
+            required
+            placeholder="Password"
+          />
+          <button mat-icon-button matSuffix (click)="isShowPassword.set(!isShowPassword())" [attr.aria-label]="'Show hide password'" [attr.aria-pressed]="isShowPassword()">
+            <mat-icon>{{ isShowPassword() ? 'visibility' : 'visibility_off' }}</mat-icon>
+          </button>
+          @if (undefined | conditional: isPasswordValid.bind(this)) {
+            <mat-error>Password is required.</mat-error>
+          }
+        </mat-form-field>
+      </form>
+    </mat-card-content>
+
+    <mat-card-actions class="justify-center">
+      <button mat-flat-button id="sign-in-button" color="primary" (click)="signIn()" class="w-full">
+        <section class="flex flex-row items-center justify-center gap-1">
+          <p>Sign in</p>
+          <mat-icon>login</mat-icon>
+        </section>
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</section>

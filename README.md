@@ -6,11 +6,11 @@ Angular starter kit
 
 **Nhan Nguyen**
 
-* [github/nhannguyendevjs](https://github.com/nhannguyendevjs)
-* [twitter/nhannguyendevjs](https://twitter.com/nhannguyendevjs)
-* [linkedin/nhannguyendevjs](https://www.linkedin.com/in/nhannguyendevjs)
-* [dev.to/nhannguyendevjs](https://dev.to/nhannguyendevjs)
-* [medium/nhannguyendevjs](https://medium.com/@nhannguyendevjs)
+- [github/nhannguyendevjs](https://github.com/nhannguyendevjs)
+- [twitter/nhannguyendevjs](https://twitter.com/nhannguyendevjs)
+- [linkedin/nhannguyendevjs](https://www.linkedin.com/in/nhannguyendevjs)
+- [dev.to/nhannguyendevjs](https://dev.to/nhannguyendevjs)
+- [medium/nhannguyendevjs](https://medium.com/@nhannguyendevjs)
 
 ## License
 
@@ -33,6 +33,19 @@ Released under the [MIT License](LICENSE).
 ![Postgres](https://img.shields.io/badge/Postgres-316192?logo=postgresql&logoColor=white&style=for-the-badge)
 ![Vite](https://img.shields.io/badge/Vite-BB2BF7?logo=vite&logoColor=white&style=for-the-badge)
 ![Docker](https://img.shields.io/badge/Docker-46a2f1?logo=docker&logoColor=white&style=for-the-badge)
+
+## Initial Project
+
+```bash
+ng new angular-starter-kit --standalone=true --style=scss --routing=true --skip-git=true --skip-tests=true --ssr=false
+ng add @angular/material
+ng add @angular/pwa
+ng add @jsverse/transloco
+npm i lodash luxon @ngrx/store animate.css ngx-skeleton-loader ngx-toastr uuid nanoid zod hotkeys-js apexcharts ng-apexcharts
+npm i -D @types/lodash @types/luxon @types/uuid @types/nanoid webpack-bundle-analyzer tailwindcss postcss autoprefixer tailwind-merge vitest @vitest/coverage-istanbul @vitest/coverage-v8 @vitest/ui prettier
+npx tailwindcss init
+npm init playwright@latest
+```
 
 ## Coding Naming Conventions
 
@@ -136,8 +149,8 @@ merge/combined-device-support
 
 ## Visual Studio Extensions
 
-* Prettier - Code formatter
-* SonarLint
-* Code Spell Checker
+- Prettier - Code formatter
+- SonarLint
+- Code Spell Checker
 
 ## Issues
