@@ -33,25 +33,25 @@ export const httpCacheInterceptor: HttpInterceptorFn = (request, next) => {
 @Injectable({ providedIn: 'root' })
 export class HttpRequestCache {
   // Using the object gives more performance than a Map
-  private readonly requests: Record<string, Observable<HttpEvent<any>>> = {};
+  readonly #requests: Record<string, Observable<HttpEvent<any>>> = {};
 
   public has(request: HttpRequest<any>): boolean {
-    return this.key(request) in this.requests;
+    return this.#key(request) in this.#requests;
   }
 
   public get(request: HttpRequest<any>): Observable<HttpEvent<any>> {
-    return this.requests[this.key(request)];
+    return this.#requests[this.#key(request)];
   }
 
   public set(request: HttpRequest<any>, response: Observable<HttpEvent<any>>): void {
-    this.requests[this.key(request)] = response;
+    this.#requests[this.#key(request)] = response;
   }
 
   public delete(request: HttpRequest<any>): void {
-    delete this.requests[this.key(request)];
+    delete this.#requests[this.#key(request)];
   }
 
-  private key(request: HttpRequest<any>): string {
+  #key(request: HttpRequest<any>): string {
     return [request.urlWithParams, request.responseType].join('#');
   }
 }
