@@ -16,21 +16,6 @@ export class NavListComponent {
       selected: true,
     },
     {
-      label: 'Dashboard',
-      path: '/dashboard',
-      selected: true,
-    },
-    {
-      label: 'Users',
-      path: '/users',
-      selected: false,
-    },
-    {
-      label: 'Kanban board',
-      path: '/kanban-board',
-      selected: false,
-    },
-    {
       label: 'Settings',
       path: '/settings',
       selected: false,
