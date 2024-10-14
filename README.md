@@ -41,7 +41,7 @@ ng new angular-starter-kit --standalone=true --style=scss --routing=true --skip-
 ng add @angular/material
 ng add @angular/pwa
 ng add @jsverse/transloco
-npm i lodash luxon @ngrx/store animate.css ngx-skeleton-loader ngx-toastr uuid nanoid zod hotkeys-js apexcharts ng-apexcharts
+npm i lodash luxon @ngrx/store animate.css ngx-skeleton-loader ngx-toastr uuid nanoid zod hotkeys-js apexcharts ng-apexcharts swiper
 npm i -D @types/lodash @types/luxon @types/uuid @types/nanoid webpack-bundle-analyzer tailwindcss postcss autoprefixer tailwind-merge vitest @vitest/coverage-istanbul @vitest/coverage-v8 @vitest/ui prettier
 npx tailwindcss init
 npm init playwright@latest

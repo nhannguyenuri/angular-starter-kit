@@ -2,7 +2,6 @@ import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component, DestroyRef, inject, signal } from '@angular/core';
 import { takeUntilDestroyed, toObservable } from '@angular/core/rxjs-interop';
 import { AppStoreService } from '../../services/app-store.service';
-import * as UsersType from '../../types/users.type';
 
 @Component({
   selector: 'app-home',
