@@ -20,10 +20,10 @@ const MaterialModules = [MatIconModule, MatButtonModule, MatMenuModule, MatDivid
   templateUrl: './nav-bar.component.html',
 })
 export class NavBarComponent {
-  #router = inject(Router);
-  #appStoreService = inject(AppStoreService);
-  #appNavService = inject(AppNavService);
-  #destroyRef = inject(DestroyRef);
+  readonly #router = inject(Router);
+  readonly #appStoreService = inject(AppStoreService);
+  readonly #appNavService = inject(AppNavService);
+  readonly #destroyRef = inject(DestroyRef);
 
   currentUser = signal<any>(null);
 

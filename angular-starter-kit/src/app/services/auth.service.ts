@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
-import { APIs } from '../enums/api.enum';
+// import { APIs } from '../enums/api.enum';
 import { LocalStorageKeys } from '../enums/local-storage.enum';
 import * as AuthTypes from '../types/auth.type';
 import { of } from 'rxjs';
@@ -9,13 +9,11 @@ import { of } from 'rxjs';
   providedIn: 'root',
 })
 export class AuthService {
-  #http = inject(HttpClient);
+  readonly #http = inject(HttpClient);
 
   isSignedIn() {
     const accessToken = localStorage.getItem(LocalStorageKeys.authorization);
-
     return !!accessToken;
-
   }
 
   signIn(signInPayload: AuthTypes.SignInPayload) {

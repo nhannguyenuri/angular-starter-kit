@@ -24,10 +24,10 @@ const MaterialModules = [MatCardModule, MatIconModule, MatInputModule, MatFormFi
   templateUrl: './sign-in.component.html',
 })
 export class SignInComponent {
-  #authService = inject(AuthService);
-  #appStoreService = inject(AppStoreService);
-  #router = inject(Router);
-  #formBuilder = inject(FormBuilder);
+  readonly #authService = inject(AuthService);
+  readonly #appStoreService = inject(AppStoreService);
+  readonly #router = inject(Router);
+  readonly #formBuilder = inject(FormBuilder);
 
   errorMessage = signal('');
 
@@ -38,7 +38,7 @@ export class SignInComponent {
     password: new FormControl('', Validators.required),
   });
 
-  constructor() {
+  ngOnInit() {
     if (this.#authService.isSignedIn()) {
       this.#router.navigate(['/'], { queryParams: { action: ShellActions.signIn } });
     }

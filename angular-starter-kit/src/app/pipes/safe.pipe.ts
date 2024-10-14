@@ -11,7 +11,7 @@ import { DomSanitizer, SafeHtml, SafeStyle, SafeScript, SafeUrl, SafeResourceUrl
   pure: true,
 })
 export class SafePipe implements PipeTransform {
-  #sanitizer = inject(DomSanitizer);
+ readonly #sanitizer = inject(DomSanitizer);
 
   transform(value: string, type: string): SafeHtml | SafeStyle | SafeScript | SafeUrl | SafeResourceUrl {
     switch (type) {

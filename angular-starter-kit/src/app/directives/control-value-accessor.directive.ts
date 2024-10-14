@@ -23,11 +23,11 @@ import { Subject } from 'rxjs';
   ],
 })
 export class ControlValueAccessorDirective<T> implements ControlValueAccessor, OnDestroy {
-  #onChange: any;
-  #onTouched: any;
+  readonly #onChange: any;
+  readonly #onTouched: any;
 
-  #valueSubject$ = new Subject<T>();
-  #disabledSubject$ = new Subject<boolean>();
+  readonly #valueSubject$ = new Subject<T>();
+  readonly #disabledSubject$ = new Subject<boolean>();
 
   readonly value = this.#valueSubject$.asObservable();
   readonly disabled = this.#disabledSubject$.asObservable();

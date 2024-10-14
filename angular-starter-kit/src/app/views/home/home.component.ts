@@ -12,8 +12,8 @@ import * as UsersType from '../../types/users.type';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HomeComponent {
-  #appStoreService = inject(AppStoreService);
-  #destroyRef = inject(DestroyRef);
+  readonly #appStoreService = inject(AppStoreService);
+  readonly #destroyRef = inject(DestroyRef);
 
   currentUser = signal<UsersType.User>(null);
 

@@ -16,12 +16,12 @@ import { AuthService } from './services/auth.service';
   templateUrl: './app.component.html',
 })
 export class AppComponent {
-  #swUpdate = inject(SwUpdate);
-  #translocoService = inject(TranslocoService);
-  #router = inject(Router);
-  #destroyRef = inject(DestroyRef);
-  #authService = inject(AuthService);
-  #appStoreService = inject(AppStoreService);
+  readonly #swUpdate = inject(SwUpdate);
+  readonly #translocoService = inject(TranslocoService);
+  readonly #router = inject(Router);
+  readonly #destroyRef = inject(DestroyRef);
+  readonly #authService = inject(AuthService);
+  readonly #appStoreService = inject(AppStoreService);
 
   isSignedIn = signal(this.#authService.isSignedIn());
 

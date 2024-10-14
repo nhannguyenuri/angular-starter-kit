@@ -35,19 +35,19 @@ export class HttpRequestCache {
   // Using the object gives more performance than a Map
   readonly #requests: Record<string, Observable<HttpEvent<any>>> = {};
 
-  public has(request: HttpRequest<any>): boolean {
+  has(request: HttpRequest<any>): boolean {
     return this.#key(request) in this.#requests;
   }
 
-  public get(request: HttpRequest<any>): Observable<HttpEvent<any>> {
+  get(request: HttpRequest<any>): Observable<HttpEvent<any>> {
     return this.#requests[this.#key(request)];
   }
 
-  public set(request: HttpRequest<any>, response: Observable<HttpEvent<any>>): void {
+  set(request: HttpRequest<any>, response: Observable<HttpEvent<any>>): void {
     this.#requests[this.#key(request)] = response;
   }
 
-  public delete(request: HttpRequest<any>): void {
+  delete(request: HttpRequest<any>): void {
     delete this.#requests[this.#key(request)];
   }
 

@@ -10,8 +10,8 @@ import { ShellActions } from '../../enums/shell.enum';
   templateUrl: './shell.component.html',
 })
 export class ShellComponent {
-  #router = inject(Router);
-  #route = inject(ActivatedRoute);
+  readonly #router = inject(Router);
+  readonly #route = inject(ActivatedRoute);
 
   constructor() {
     this.#checkForRedirect();

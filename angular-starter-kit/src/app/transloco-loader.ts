@@ -4,7 +4,7 @@ import { HttpClient } from '@angular/common/http';
 
 @Injectable({ providedIn: 'root' })
 export class TranslocoHttpLoader implements TranslocoLoader {
-  #http = inject(HttpClient);
+  readonly #http = inject(HttpClient);
 
   getTranslation(lang: string) {
     return this.#http.get<Translation>(`/public/i18n/${lang}.json`);
