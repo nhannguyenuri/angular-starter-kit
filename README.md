@@ -43,7 +43,7 @@ ng new angular-starter-kit --standalone=true --style=scss --skip-git=true --skip
 npm i -D webpack-bundle-analyzer
 ```
 
-### Angular material
+### Angular Material
 
 ```bash
 ng add @angular/material
