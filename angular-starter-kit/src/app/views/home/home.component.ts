@@ -14,7 +14,7 @@ export class HomeComponent {
   readonly #appStoreService = inject(AppStoreService);
   readonly #destroyRef = inject(DestroyRef);
 
-  currentUser = signal<UsersType.User>(null);
+  currentUser = signal<any>(null);
 
   constructor() {
     toObservable(this.#appStoreService.me)
