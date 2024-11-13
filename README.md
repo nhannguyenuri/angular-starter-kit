@@ -22,29 +22,69 @@ Released under the [MIT License](LICENSE).
 
 ![Git](https://img.shields.io/badge/Git-F05032?logo=git&logoColor=white&style=for-the-badge)
 ![NPM](https://img.shields.io/badge/NPM-CB3837?logo=npm&logoColor=white&style=for-the-badge)
-![HTML5](https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=white&style=for-the-badge)
-![CSS3](https://img.shields.io/badge/CSS3-2F4BD8?logo=css3&logoColor=white&style=for-the-badge)
+![HTML](https://img.shields.io/badge/HTML-E34F26?logo=html5&logoColor=white&style=for-the-badge)
+![CSS](https://img.shields.io/badge/CSS-2F4BD8?logo=css3&logoColor=white&style=for-the-badge)
 ![SASS](https://img.shields.io/badge/Sass-CC6699?logo=sass&logoColor=white&style=for-the-badge)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=black&style=for-the-badge)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=white&style=for-the-badge)
 ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=white&style=for-the-badge)
 ![Angular](https://img.shields.io/badge/Angular-DD0031?logo=angular&logoColor=white&style=for-the-badge)
 ![Nodejs](https://img.shields.io/badge/Nodejs-43853d?logo=Node.js&logoColor=white&style=for-the-badge)
+![Python](https://img.shields.io/badge/Python-F7DF1E?logo=Python&style=for-the-badge)
 ![MongoDB](https://img.shields.io/badge/MongoDB-13aa52?logo=mongodb&logoColor=white&style=for-the-badge)
 ![Postgres](https://img.shields.io/badge/Postgres-316192?logo=postgresql&logoColor=white&style=for-the-badge)
-![Vite](https://img.shields.io/badge/Vite-BB2BF7?logo=vite&logoColor=white&style=for-the-badge)
 ![Docker](https://img.shields.io/badge/Docker-46a2f1?logo=docker&logoColor=white&style=for-the-badge)
 
 ## Initial Project
 
+### Init Angular project
+
 ```bash
-ng new angular-starter-kit --standalone=true --style=scss --routing=true --skip-git=true --skip-tests=true --ssr=false
+ng new angular-starter-kit --standalone=true --style=scss --skip-git=true --skip-tests=true
+npm i -D webpack-bundle-analyzer
+```
+
+### Angular material
+
+```bash
 ng add @angular/material
+```
+
+### Angular PWA
+
+```bash
 ng add @angular/pwa
-ng add @jsverse/transloco
-npm i lodash luxon @ngrx/store animate.css ngx-skeleton-loader ngx-toastr uuid nanoid zod hotkeys-js apexcharts ng-apexcharts swiper
-npm i -D @types/lodash @types/luxon @types/uuid @types/nanoid webpack-bundle-analyzer tailwindcss postcss autoprefixer tailwind-merge vitest @vitest/coverage-istanbul @vitest/coverage-v8 @vitest/ui prettier
+```
+
+### Tailwind CSS
+
+```bash
+npm i -D tailwindcss postcss autoprefixer tailwind-merge
 npx tailwindcss init
+```
+
+### Transloco
+
+```bash
+ng add @jsverse/transloco
+```
+
+### Playwright
+
+```bash
 npm init playwright@latest
+```
+
+### Vitest
+
+```bash
+npm i -D vitest @vitest/coverage-istanbul @vitest/coverage-v8 @vitest/ui prettier
+```
+
+### Libraries
+
+```bash
+npm i lodash luxon @ngrx/store animate.css ngx-skeleton-loader ngx-toastr uuid nanoid zod hotkeys-js swiper apexcharts ng-apexcharts
+npm i -D @types/lodash @types/luxon @types/uuid @types/nanoid
 ```
 
 ## Coding Naming Conventions
