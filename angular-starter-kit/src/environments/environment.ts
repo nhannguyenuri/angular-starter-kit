@@ -4,6 +4,6 @@ export const environment = {
   production: false,
   logLevel: LOG_LEVEL.debug,
   version: '0.0.0',
-  startupUrl: '/home',
+  startupUrl: 'home',
   language: 'en',
 } as const;

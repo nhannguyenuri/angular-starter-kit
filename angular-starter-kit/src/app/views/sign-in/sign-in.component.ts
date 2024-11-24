@@ -65,7 +65,7 @@ export class SignInComponent {
             const { accessToken, user } = res.data;
             localStorage.setItem(LocalStorageKeys.authorization, accessToken);
             this.#appStoreService.me.set(user);
-            this.#router.navigate(['/'], { queryParams: { action: ShellActions.signIn } });
+            this.#router.navigate(['/shell'], { queryParams: { action: ShellActions.signIn } });
           }
         },
         error: (err) => {

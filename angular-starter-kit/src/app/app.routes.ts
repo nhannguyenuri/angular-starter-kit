@@ -1,6 +1,8 @@
 import { Routes } from '@angular/router';
+import { environment } from '../environments/environment';
 import { authChildGuard } from './guards/auth-child.guard';
 import { authGuard } from './guards/auth.guard';
+import { guestGuard } from './guards/guest.guard';
 
 export const routes: Routes = [
   // ----------------------------------------------------------------
@@ -9,21 +11,17 @@ export const routes: Routes = [
   {
     path: '',
     loadComponent: () => import('./layouts/guest-layout/guest-layout.component').then((c) => c.GuestLayoutComponent),
+    canActivate: [guestGuard],
     children: [
       {
-        path: 'shell',
-        title: 'Shell',
-        loadComponent: () => import('./views/shell/shell.component').then((c) => c.ShellComponent),
+        path: '',
+        redirectTo: 'sign-in',
+        pathMatch: 'full',
       },
       {
         path: 'sign-in',
         title: 'Sign in',
         loadComponent: () => import('./views/sign-in/sign-in.component').then((c) => c.SignInComponent),
-      },
-      {
-        path: '',
-        redirectTo: 'shell',
-        pathMatch: 'full',
       },
     ],
   },
@@ -37,6 +35,11 @@ export const routes: Routes = [
     canActivateChild: [authChildGuard],
     children: [
       {
+        path: '',
+        redirectTo: environment.startupUrl,
+        pathMatch: 'full',
+      },
+      {
         path: 'home',
         title: 'Home',
         loadComponent: () => import('./views/home/home.component').then((c) => c.HomeComponent),
@@ -47,6 +50,14 @@ export const routes: Routes = [
         loadComponent: () => import('./views/settings/settings.component').then((c) => c.SettingsComponent),
       },
     ],
+  },
+  // ----------------------------------------------------------------
+  // Shell route
+  // ----------------------------------------------------------------
+  {
+    path: 'shell',
+    title: 'Shell',
+    loadComponent: () => import('./views/shell/shell.component').then((c) => c.ShellComponent),
   },
   // ----------------------------------------------------------------
   // Not found route

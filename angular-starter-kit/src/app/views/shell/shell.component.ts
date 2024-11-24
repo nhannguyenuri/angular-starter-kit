@@ -21,7 +21,7 @@ export class ShellComponent {
     const params: any = this.#route.snapshot.queryParams;
 
     if (params.action === ShellActions.signIn) {
-      this.#router.navigate([environment.startupUrl]);
+      this.#router.navigate([`/${environment.startupUrl}`]);
       return;
     }
 
@@ -31,6 +31,6 @@ export class ShellComponent {
       return;
     }
 
-    this.#router.navigate([environment.startupUrl]);
+    this.#router.navigate([`/${environment.startupUrl}`]);
   }
 }
