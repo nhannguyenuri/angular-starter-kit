@@ -1,4 +1,3 @@
-import { NgIf } from '@angular/common';
 import { Component, HostListener, inject, signal } from '@angular/core';
 import { FormBuilder, FormControl, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
@@ -11,16 +10,16 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { Router } from '@angular/router';
 import { LocalStorageKeys } from '../../enums/local-storage.enum';
 import { ShellActions } from '../../enums/shell.enum';
+import { ConditionalPipe } from '../../pipes/conditional.pipe';
 import { AppStoreService } from '../../services/app-store.service';
 import { AuthService } from '../../services/auth.service';
-import { ConditionalPipe } from '../../pipes/conditional.pipe';
 
 const MaterialModules = [MatCardModule, MatIconModule, MatInputModule, MatFormFieldModule, MatButtonModule, MatProgressBarModule, MatCheckboxModule];
 
 @Component({
   selector: 'app-sign-in',
   standalone: true,
-  imports: [FormsModule, ReactiveFormsModule, NgIf, ConditionalPipe, ...MaterialModules],
+  imports: [FormsModule, ReactiveFormsModule, ConditionalPipe, ...MaterialModules],
   templateUrl: './sign-in.component.html',
 })
 export class SignInComponent {

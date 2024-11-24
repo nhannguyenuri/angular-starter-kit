@@ -1,39 +1,39 @@
 // Vendors
-@import '../node_modules/animate.css/animate.min.css';
+@use '../node_modules/animate.css/animate.min.css';
+
+// Material
+@use './styles/material/theme';
+
+// Common
+@use './styles/common/variables';
+
+// Keyframes
+@use './styles/keyframes/loader';
+
+// Animations
+@use './styles/animations/spinner';
+
+// Mixins
+@use './styles/mixins/loading';
+
+// Elements
+@use './styles/elements/dialog';
+
+// Components
+@use './styles/components/nav-bar';
+@use './styles/components/nav-list';
+
+// Views
+@use './styles/views/shell';
+@use './styles/views/sign-in';
+@use './styles/views/not-found';
+@use './styles/views/home';
+@use './styles/views/settings';
+
+// App
+@use './styles/app';
 
 // Tailwind
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-// Material
-@import './styles/material/theme';
-
-// Common
-@import './styles/common/variables';
-
-// Keyframes
-@import './styles/keyframes/loader';
-
-// Animations
-@import './styles/animations/spinner';
-
-// Mixins
-@import './styles/mixins/loading';
-
-// Elements
-@import './styles/elements/dialog';
-
-// Components
-@import './styles/components/nav-bar';
-@import './styles/components/nav-list';
-
-// Views
-@import './styles/views/shell';
-@import './styles/views/sign-in';
-@import './styles/views/not-found';
-@import './styles/views/home';
-@import './styles/views/settings';
-
-// App
-@import './styles/app';

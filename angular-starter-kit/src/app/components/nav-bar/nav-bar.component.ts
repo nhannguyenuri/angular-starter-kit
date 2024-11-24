@@ -1,8 +1,7 @@
-import { NgIf, UpperCasePipe } from '@angular/common';
+import { UpperCasePipe } from '@angular/common';
 import { Component, DestroyRef, inject, signal } from '@angular/core';
 import { takeUntilDestroyed, toObservable } from '@angular/core/rxjs-interop';
 import { MatButtonModule } from '@angular/material/button';
-import { MatDivider } from '@angular/material/divider';
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -11,12 +10,12 @@ import { Router, RouterLink } from '@angular/router';
 import { AppNavService } from '../../services/app-nav.service';
 import { AppStoreService } from '../../services/app-store.service';
 
-const MaterialModules = [MatIconModule, MatButtonModule, MatMenuModule, MatDivider, MatToolbarModule, MatTooltipModule, MatTooltipModule];
+const MaterialModules = [MatIconModule, MatButtonModule, MatMenuModule, MatToolbarModule, MatTooltipModule, MatTooltipModule];
 
 @Component({
   selector: 'app-nav-bar',
   standalone: true,
-  imports: [RouterLink, UpperCasePipe, NgIf, ...MaterialModules],
+  imports: [RouterLink, UpperCasePipe, ...MaterialModules],
   templateUrl: './nav-bar.component.html',
 })
 export class NavBarComponent {

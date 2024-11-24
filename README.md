@@ -77,7 +77,13 @@ npm init playwright@latest
 ### Vitest
 
 ```bash
-npm i -D vitest @vitest/coverage-istanbul @vitest/coverage-v8 @vitest/ui prettier
+npm i -D vitest @vitest/coverage-istanbul @vitest/coverage-v8 @vitest/ui
+```
+
+### Prettier
+
+```bash
+npm i -D prettier
 ```
 
 ### Libraries

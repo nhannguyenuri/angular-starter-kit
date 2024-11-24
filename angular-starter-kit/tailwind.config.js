@@ -1,4 +1,6 @@
 /** @type {import('tailwindcss').Config} */
+import { twMerge } from 'tailwind-merge'
+
 module.exports = {
   content: [
     "./src/**/*.{html,ts}",
@@ -6,6 +8,6 @@ module.exports = {
   theme: {
     extend: {},
   },
-  plugins: [],
+  plugins: [twMerge],
 }
 

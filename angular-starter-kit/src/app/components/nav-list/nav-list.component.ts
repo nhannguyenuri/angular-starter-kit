@@ -1,11 +1,10 @@
-import { NgForOf } from '@angular/common';
 import { Component, signal } from '@angular/core';
 import { RouterLink, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-nav-list',
   standalone: true,
-  imports: [RouterModule, RouterLink, NgForOf],
+  imports: [RouterModule, RouterLink],
   templateUrl: './nav-list.component.html',
 })
 export class NavListComponent {
