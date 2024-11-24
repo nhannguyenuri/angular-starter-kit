@@ -1,14 +1,17 @@
-# RUN UBUNTU IMAGE
+# Run Ubuntu Image
+
 ```bash
 docker run --name u360-ubuntu --network u360-network -p 80:8080 -p 443:8443 -p 22:22 -itd ubuntu:latest
 ```
 
-# ENTER INTO UBUNTU CONTAINER
+## Enter Ubuntu Container
+
 ```bash
 docker exec -it u360-ubuntu bash
 ```
 
-# PACKAGES
+## Ubuntu Packages
+
 ```bash
 apt update
 apt install nano -y
