@@ -1,6 +1,4 @@
-# angular-starter-kit
-
-Angular starter kit
+# Angular starter kit
 
 ## Author
 
@@ -36,6 +34,9 @@ Released under the [MIT License](LICENSE).
 
 ```bash
 ng new angular-starter-kit --standalone=true --style=scss --skip-git=true --skip-tests=true
+```
+
+```bash
 npm i -D webpack-bundle-analyzer
 ```
 
@@ -53,9 +54,26 @@ ng add @angular/pwa
 
 ### Tailwind CSS
 
+Install Tailwind CSS. Install **@tailwindcss/postcss** and its peer dependencies via npm.
+
 ```bash
-npm i -D tailwindcss postcss autoprefixer tailwind-merge
-npx tailwindcss init
+npm install tailwindcss @tailwindcss/postcss postcss --force
+```
+
+Configure PostCSS Plugins. Create a **.postcssrc.json** file in the root of your project and add the **@tailwindcss/postcss** plugin to your PostCSS configuration.
+
+```json
+{
+  "plugins": {
+    "@tailwindcss/postcss": {}
+  }
+}
+```
+
+Import Tailwind CSS. Add an **@use** to **./src/styles.scss** that imports Tailwind CSS.
+
+```scss
+@import "tailwindcss";
 ```
 
 ### Transloco
@@ -86,6 +104,9 @@ npm i -D prettier
 
 ```bash
 npm i lodash luxon @ngrx/store animate.css ngx-skeleton-loader ngx-toastr uuid nanoid zod hotkeys-js swiper apexcharts ng-apexcharts
+```
+
+```bash
 npm i -D @types/lodash @types/luxon @types/uuid @types/nanoid
 ```
 

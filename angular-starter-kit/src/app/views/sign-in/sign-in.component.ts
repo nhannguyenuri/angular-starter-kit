@@ -57,7 +57,11 @@ export class SignInComponent {
     this.markAllAsTouched();
 
     if (this.signInForm.valid) {
-      const { username, password } = this.signInForm.value;
+      const { username, password } = this.signInForm.value as { username: string; password: string };
+
+      if (typeof username !== 'string' && typeof password !== 'string') {
+        return;
+      }
 
       this.#authService.signIn({ username, password }).subscribe({
         next: (res) => {
@@ -76,11 +80,11 @@ export class SignInComponent {
   }
 
   isUsernameValid() {
-    return this.signInForm.get('username')?.touched && this.signInForm.get('username')?.errors?.['required']
+    return this.signInForm.get('username')?.touched && this.signInForm.get('username')?.errors?.['required'];
   }
 
   isPasswordValid() {
-    return this.signInForm.get('password')?.touched && this.signInForm.get('password')?.errors?.['required']
+    return this.signInForm.get('password')?.touched && this.signInForm.get('password')?.errors?.['required'];
   }
 
   @HostListener('document:keydown.enter', ['$event']) onEnter(event: KeyboardEvent) {

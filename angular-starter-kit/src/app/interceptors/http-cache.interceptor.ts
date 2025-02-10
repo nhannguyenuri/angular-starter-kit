@@ -6,24 +6,28 @@ import { finalize, shareReplay } from 'rxjs/operators';
 export const httpCacheInterceptor: HttpInterceptorFn = (request, next) => {
   const cache = inject(HttpRequestCache);
 
-  // exclude some URLs from caching
-  const excludedUrls = [];
+  // List of APIs that should be cached
+  const apis: RegExp[] = [];
 
-  // processing only GET requests
-  if (request.method !== 'GET' || excludedUrls.includes(request.url)) {
+  // Check if the request is an API that should be cached
+  const isApiCached = apis.some((api) => api.test(request.url));
+
+  // If the request is not an API that should be cached
+  if (!isApiCached) {
+    // We should return the request without caching
     return next(request);
   }
 
-  // if the request is not cached yet
+  // If the request is not cached yet
   if (!cache.has(request)) {
-    // we should create a new request
+    // We should create a new request
     const response = next(request).pipe(
-      // when the request is completed we should clean cache
+      // When the request is completed we should clean cache
       finalize(() => cache.delete(request)),
-      // and don't forget to share the Observable between subscribers
+      // And don't forget to share the Observable between subscribers
       shareReplay({ refCount: true, bufferSize: 1 })
     );
-    // after that we put the request into the cache
+    // After that we put the request into the cache
     cache.set(request, response);
   }
 
