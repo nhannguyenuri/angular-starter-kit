@@ -5,9 +5,9 @@ import { AuthService } from '../services/auth.service';
 
 export const guestGuard: CanActivateFn = (_route, _state) => {
   const router = inject(Router);
-  const authService = inject(AuthService);
+  const auth = inject(AuthService);
 
-  if (authService.isSignedIn()) {
+  if (auth.isSignedIn()) {
     router.navigate([`/${environment.startupUrl}`]);
     return false;
   }

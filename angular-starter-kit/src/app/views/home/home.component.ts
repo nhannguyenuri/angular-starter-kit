@@ -11,13 +11,13 @@ import { AppStoreService } from '../../services/app-store.service';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HomeComponent {
-  readonly #appStoreService = inject(AppStoreService);
+  readonly #appStore = inject(AppStoreService);
   readonly #destroyRef = inject(DestroyRef);
 
   currentUser = signal<any>(null);
 
   constructor() {
-    toObservable(this.#appStoreService.me)
+    toObservable(this.#appStore.me)
       .pipe(takeUntilDestroyed(this.#destroyRef))
       .subscribe((user) => {
         this.currentUser.set(user);

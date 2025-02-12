@@ -2,7 +2,7 @@
 import { Injectable, /** inject **/ } from '@angular/core';
 // import { APIs } from '../enums/api.enum';
 import { LocalStorageKeys } from '../enums/local-storage.enum';
-import * as AuthTypes from '../types/auth.type';
+import * as AuthSchema from '../schemas/auth.schema';
 import { of } from 'rxjs';
 
 @Injectable({
@@ -16,8 +16,8 @@ export class AuthService {
     return !!accessToken;
   }
 
-  signIn(signInPayload: AuthTypes.SignInPayload) {
-    // return this.#http.post<AuthTypes.SignInResponse>(APIs.auth.signIn, signInPayload);
+  signIn(signInPayload: AuthSchema.SignInPayload) {
+    // return this.#http.post<AuthSchema.SignInResponse>(APIs.auth.signIn, signInPayload);
     return of({
       success: true,
       data: {
@@ -36,7 +36,7 @@ export class AuthService {
   }
 
   me() {
-    // return this.#http.get<AuthTypes.MeResponse>(APIs.auth.me);
+    // return this.#http.get<AuthSchema.MeResponse>(APIs.auth.me);
     return of({
       success: true,
       data: {

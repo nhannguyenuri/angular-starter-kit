@@ -12,5 +12,5 @@ import { NgClass } from '@angular/common';
   templateUrl: './auth-layout.component.html',
 })
 export class AuthLayoutComponent {
-  appNavService = inject(AppNavService);
+  appNav = inject(AppNavService);
 }

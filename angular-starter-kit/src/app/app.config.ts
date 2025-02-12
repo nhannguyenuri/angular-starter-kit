@@ -26,7 +26,7 @@ export const appConfig: ApplicationConfig = {
     provideHttpClient(withFetch()),
     provideTransloco({
       config: {
-        availableLangs: ['en', 'vi'],
+        availableLangs: ['en', 'es'],
         defaultLang: environment.language,
         fallbackLang: environment.language,
         // Remove this option if your application doesn't support changing language in runtime.

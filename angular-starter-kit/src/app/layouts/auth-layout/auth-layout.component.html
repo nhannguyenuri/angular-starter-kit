@@ -3,11 +3,11 @@
     <app-nav-bar />
   </header>
 
-  <aside class="col-span-4 lg:col-span-2 h-[calc(100dvh-4rem)]" [ngClass]="{ '!hidden': !appNavService.isShowNavList() }">
+  <aside class="col-span-4 lg:col-span-2 h-[calc(100dvh-4rem)]" [ngClass]="{ '!hidden': !appNav.isShowNavList() }">
     <app-nav-list />
   </aside>
 
-  <main class="col-span-8 lg:col-span-10 h-[calc(100dvh-4rem)]" [ngClass]="{ '!col-span-full': !appNavService.isShowNavList() }">
+  <main class="col-span-8 lg:col-span-10 h-[calc(100dvh-4rem)]" [ngClass]="{ '!col-span-full': !appNav.isShowNavList() }">
     <section class="h-full w-full">
       <router-outlet></router-outlet>
     </section>
