@@ -23,8 +23,8 @@ const MaterialModules = [MatCardModule, MatIconModule, MatInputModule, MatFormFi
   templateUrl: './sign-in.component.html',
 })
 export class SignInComponent {
-  readonly #authService = inject(AuthService);
-  readonly #appStoreService = inject(AppStoreService);
+  readonly #auth = inject(AuthService);
+  readonly #appStore = inject(AppStoreService);
   readonly #router = inject(Router);
   readonly #formBuilder = inject(FormBuilder);
 
@@ -36,9 +36,9 @@ export class SignInComponent {
     username: new FormControl('', Validators.required),
     password: new FormControl('', Validators.required),
   });
-
+``
   ngOnInit() {
-    if (this.#authService.isSignedIn()) {
+    if (this.#auth.isSignedIn()) {
       this.#router.navigate(['/'], { queryParams: { action: ShellActions.signIn } });
     }
   }
@@ -63,12 +63,12 @@ export class SignInComponent {
         return;
       }
 
-      this.#authService.signIn({ username, password }).subscribe({
+      this.#auth.signIn({ username, password }).subscribe({
         next: (res) => {
           if (res.success) {
             const { accessToken, user } = res.data;
             localStorage.setItem(LocalStorageKeys.authorization, accessToken);
-            this.#appStoreService.me.set(user);
+            this.#appStore.me.set(user);
             this.#router.navigate(['/shell'], { queryParams: { action: ShellActions.signIn } });
           }
         },

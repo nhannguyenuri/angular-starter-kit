@@ -20,14 +20,14 @@ const MaterialModules = [MatIconModule, MatButtonModule, MatMenuModule, MatToolb
 })
 export class NavBarComponent {
   readonly #router = inject(Router);
-  readonly #appStoreService = inject(AppStoreService);
-  readonly #appNavService = inject(AppNavService);
+  readonly #appStore = inject(AppStoreService);
+  readonly #appNav = inject(AppNavService);
   readonly #destroyRef = inject(DestroyRef);
 
   currentUser = signal<any>(null);
 
   constructor() {
-    toObservable(this.#appStoreService.me)
+    toObservable(this.#appStore.me)
       .pipe(takeUntilDestroyed(this.#destroyRef))
       .subscribe((user) => {
         this.currentUser.set(user);
@@ -35,12 +35,12 @@ export class NavBarComponent {
   }
 
   toggleMenu() {
-    this.#appNavService.toggleMenu();
+    this.#appNav.toggleMenu();
   }
 
   signOut() {
     localStorage.clear();
-    this.#appStoreService.me.set(null);
+    this.#appStore.me.set(null);
     this.#router.navigate(['/sign-in']);
   }
 }

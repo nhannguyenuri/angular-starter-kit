@@ -20,10 +20,10 @@ export class AppComponent {
   readonly #translocoService = inject(TranslocoService);
   readonly #router = inject(Router);
   readonly #destroyRef = inject(DestroyRef);
-  readonly #authService = inject(AuthService);
-  readonly #appStoreService = inject(AppStoreService);
+  readonly #auth = inject(AuthService);
+  readonly #appStore = inject(AppStoreService);
 
-  isSignedIn = signal(this.#authService.isSignedIn());
+  isSignedIn = signal(this.#auth.isSignedIn());
 
   constructor() {
     this.#registerServiceWorkerUpgrade();
@@ -34,7 +34,7 @@ export class AppComponent {
   }
 
   #registerStoreUser() {
-    toObservable(this.#appStoreService.me)
+    toObservable(this.#appStore.me)
       .pipe(takeUntilDestroyed(this.#destroyRef))
       .subscribe((user) => {
         this.isSignedIn.set(!!user);
@@ -42,11 +42,11 @@ export class AppComponent {
   }
 
   #loadCurrentUser() {
-    if (this.#authService.isSignedIn()) {
-      this.#authService.me().subscribe((res) => {
+    if (this.#auth.isSignedIn()) {
+      this.#auth.me().subscribe((res) => {
         if (res.success) {
           const user = res.data;
-          this.#appStoreService.me.set(user);
+          this.#appStore.me.set(user);
         }
       });
     }
