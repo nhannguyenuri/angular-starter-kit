@@ -76,6 +76,18 @@ Import Tailwind CSS. Add an **@use** to **./src/styles.scss** that imports Tailw
 @import "tailwindcss";
 ```
 
+```bash
+npm install -D prettier prettier-plugin-tailwindcss
+```
+
+```
+// .prettierrc
+{
+  ...
+  "plugins": ["prettier-plugin-tailwindcss"]
+}
+```
+
 ### Transloco
 
 ```bash
