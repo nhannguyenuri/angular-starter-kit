@@ -4,15 +4,15 @@
 
 **Nhan Nguyen**
 
-- [github/nhannguyendevjs](https://github.com/nhannguyendevjs)
-- [twitter/nhannguyendevjs](https://twitter.com/nhannguyendevjs)
-- [linkedin/nhannguyendevjs](https://www.linkedin.com/in/nhannguyendevjs)
-- [dev.to/nhannguyendevjs](https://dev.to/nhannguyendevjs)
-- [medium/nhannguyendevjs](https://medium.com/@nhannguyendevjs)
+* [github/nhannguyendevjs](https://github.com/nhannguyendevjs)
+* [twitter/nhannguyendevjs](https://twitter.com/nhannguyendevjs)
+* [linkedin/nhannguyendevjs](https://www.linkedin.com/in/nhannguyendevjs)
+* [dev.to/nhannguyendevjs](https://dev.to/nhannguyendevjs)
+* [medium/nhannguyendevjs](https://medium.com/@nhannguyendevjs)
 
 ## License
 
-Copyright © 2024, [Nhan Nguyen](https://github.com/nhannguyendevjs).
+Copyright © 2025, [Nhan Nguyen](https://github.com/nhannguyendevjs).
 
 Released under the [MIT License](LICENSE).
 
@@ -20,13 +20,17 @@ Released under the [MIT License](LICENSE).
 
 ![Git](https://img.shields.io/badge/Git-F05032?logo=git&logoColor=white&style=for-the-badge)
 ![NPM](https://img.shields.io/badge/NPM-CB3837?logo=npm&logoColor=white&style=for-the-badge)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=white&style=for-the-badge)
 ![HTML](https://img.shields.io/badge/HTML-E34F26?logo=html5&logoColor=white&style=for-the-badge)
 ![CSS](https://img.shields.io/badge/CSS-2F4BD8?logo=css3&logoColor=white&style=for-the-badge)
-![SASS](https://img.shields.io/badge/Sass-CC6699?logo=sass&logoColor=white&style=for-the-badge)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=white&style=for-the-badge)
 ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=white&style=for-the-badge)
 ![Angular](https://img.shields.io/badge/Angular-DD0031?logo=angular&logoColor=white&style=for-the-badge)
+![Nodejs](https://img.shields.io/badge/Nodejs-43853d?logo=Node.js&logoColor=white&style=for-the-badge)
+![Golang](https://img.shields.io/badge/Go-ffffff?logo=go&logoColor=bllue&style=for-the-badge)
+![MongoDB](https://img.shields.io/badge/MongoDB-13aa52?logo=mongodb&logoColor=white&style=for-the-badge)
+![Postgres](https://img.shields.io/badge/Postgres-316192?logo=postgresql&logoColor=white&style=for-the-badge)
 ![Docker](https://img.shields.io/badge/Docker-46a2f1?logo=docker&logoColor=white&style=for-the-badge)
+![Prisma](https://img.shields.io/badge/Prisma-ffffff?logo=prisma&logoColor=black&style=for-the-badge)
 
 ## Initial Project
 
@@ -221,11 +225,5 @@ Examples
 merge/dev_lombok-refactoring
 
 merge/combined-device-support
-
-## Visual Studio Extensions
-
-- Prettier - Code formatter
-- SonarLint
-- Code Spell Checker
 
 ## Issues
