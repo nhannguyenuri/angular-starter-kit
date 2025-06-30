@@ -3,11 +3,10 @@ import { RouterLink, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-nav-list',
-  standalone: true,
   imports: [RouterModule, RouterLink],
-  templateUrl: './nav-list.component.html',
+  templateUrl: './nav-list.html',
 })
-export class NavListComponent {
+export class NavList {
   readonly navItems = signal([
     {
       label: 'Home',

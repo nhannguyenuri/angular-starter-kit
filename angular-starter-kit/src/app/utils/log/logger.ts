@@ -12,7 +12,7 @@ export const LOG_LEVEL = {
 @Injectable({
   providedIn: 'root',
 })
-export class LogService {
+export class Logger {
   log(message?: any, ...optionalParams: any[]) {
     if (environment.logLevel >= LOG_LEVEL.debug) {
       console.log(...[message, ...optionalParams]);

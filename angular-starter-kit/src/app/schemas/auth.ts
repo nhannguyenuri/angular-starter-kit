@@ -1,4 +1,4 @@
-export type SignInPayload= {
+export type SignInPayload = {
   username: string;
   password: string;
 };

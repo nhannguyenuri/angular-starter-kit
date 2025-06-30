@@ -1,14 +1,14 @@
 // import { HttpClient } from '@angular/common/http';
-import { Injectable, /** inject **/ } from '@angular/core';
+import { Injectable /** inject **/ } from '@angular/core';
 // import { APIs } from '../enums/api.enum';
-import { LocalStorageKeys } from '../enums/local-storage.enum';
-import * as AuthSchema from '../schemas/auth.schema';
 import { of } from 'rxjs';
+import { LocalStorageKeys } from '../enums/local-storage';
+import * as AuthSchema from '../schemas/auth';
 
 @Injectable({
   providedIn: 'root',
 })
-export class AuthService {
+export class AuthStore {
   // readonly #http = inject(HttpClient);
 
   isSignedIn() {

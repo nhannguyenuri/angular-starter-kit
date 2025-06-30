@@ -1,15 +1,14 @@
 import { Component, inject } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { environment } from '../../../environments/environment';
-import { ShellActions } from '../../enums/shell.enum';
+import { ShellActions } from '../../enums/shell';
 
 @Component({
   selector: 'app-shell',
-  standalone: true,
   imports: [],
-  templateUrl: './shell.component.html',
+  templateUrl: './shell.html',
 })
-export class ShellComponent {
+export class Shell {
   readonly #router = inject(Router);
   readonly #route = inject(ActivatedRoute);
 

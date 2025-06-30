@@ -2,8 +2,7 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-settings',
-  standalone: true,
   imports: [],
-  templateUrl: './settings.component.html',
+  templateUrl: './settings.html',
 })
-export class SettingsComponent {}
+export class Settings {}

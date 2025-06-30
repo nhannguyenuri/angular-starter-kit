@@ -8,9 +8,8 @@ import { Directive, EventEmitter, HostListener, Input, Output } from '@angular/c
  */
 @Directive({
   selector: '[infiniteScroll]',
-  standalone: true,
 })
-export class InfiniteScrollDirective {
+export class InfiniteScroll {
   @Input() scrollThreshold = 0;
   @Output() scrolled = new EventEmitter<void>();
 

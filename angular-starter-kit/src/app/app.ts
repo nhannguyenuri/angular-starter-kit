@@ -5,23 +5,22 @@ import { SwUpdate } from '@angular/service-worker';
 import { TranslocoService } from '@jsverse/transloco';
 import { timer } from 'rxjs';
 import { environment } from '../environments/environment';
-import { LocalStorageKeys } from './enums/local-storage.enum';
-import { AppStoreService } from './services/app-store.service';
-import { AuthService } from './services/auth.service';
+import { LocalStorageKeys } from './enums/local-storage';
+import { AppStore } from './services/app-store';
+import { AuthStore } from './services/auth-store';
 
 @Component({
   selector: 'app-root',
-  standalone: true,
   imports: [RouterOutlet],
-  templateUrl: './app.component.html',
+  templateUrl: './app.html',
 })
-export class AppComponent {
+export class App {
   readonly #swUpdate = inject(SwUpdate);
   readonly #translocoService = inject(TranslocoService);
   readonly #router = inject(Router);
   readonly #destroyRef = inject(DestroyRef);
-  readonly #auth = inject(AuthService);
-  readonly #appStore = inject(AppStoreService);
+  readonly #auth = inject(AuthStore);
+  readonly #appStore = inject(AppStore);
 
   isSignedIn = signal(this.#auth.isSignedIn());
 
@@ -53,15 +52,17 @@ export class AppComponent {
   }
 
   #registerRouterEvents() {
-    this.#router.events.pipe(takeUntilDestroyed(this.#destroyRef)).subscribe((navigationEvent) => {
-      if (navigationEvent instanceof NavigationEnd) {
-        const { urlAfterRedirects } = navigationEvent;
+    this.#router.events
+      .pipe(takeUntilDestroyed(this.#destroyRef))
+      .subscribe((navigationEvent) => {
+        if (navigationEvent instanceof NavigationEnd) {
+          const { urlAfterRedirects } = navigationEvent;
 
-        if (!urlAfterRedirects.includes('/sign-in')) {
-          localStorage.setItem(LocalStorageKeys.lastUrl, urlAfterRedirects);
+          if (!urlAfterRedirects.includes('/sign-in')) {
+            localStorage.setItem(LocalStorageKeys.lastUrl, urlAfterRedirects);
+          }
         }
-      }
-    });
+      });
   }
 
   #registerServiceWorkerUpgrade() {
@@ -71,7 +72,9 @@ export class AppComponent {
         .subscribe(() => {
           this.#swUpdate.checkForUpdate().then((res) => {
             if (res) {
-              if (confirm('A new version is available, do you want to load it?')) {
+              if (
+                confirm('A new version is available, do you want to load it?')
+              ) {
                 window.location.reload();
               }
             }
@@ -83,6 +86,8 @@ export class AppComponent {
   #detectLocalLanguage() {
     const language = localStorage.getItem('language') ?? environment.language;
     this.#translocoService.setActiveLang(language);
-    this.#translocoService.setFallbackLangForMissingTranslation({ fallbackLang: 'en' });
+    this.#translocoService.setFallbackLangForMissingTranslation({
+      fallbackLang: 'en',
+    });
   }
 }

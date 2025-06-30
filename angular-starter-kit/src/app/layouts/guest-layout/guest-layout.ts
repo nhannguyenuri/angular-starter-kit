@@ -3,8 +3,7 @@ import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-guest-layout',
-  standalone: true,
   imports: [RouterOutlet],
-  templateUrl: './guest-layout.component.html',
+  templateUrl: './guest-layout.html',
 })
-export class GuestLayoutComponent {}
+export class GuestLayout {}

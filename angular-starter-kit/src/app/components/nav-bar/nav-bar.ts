@@ -7,21 +7,27 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { Router, RouterLink } from '@angular/router';
-import { AppNavService } from '../../services/app-nav.service';
-import { AppStoreService } from '../../services/app-store.service';
+import { AppNavStore } from '../../services/app-nav-store';
+import { AppStore } from '../../services/app-store';
 
-const MaterialModules = [MatIconModule, MatButtonModule, MatMenuModule, MatToolbarModule, MatTooltipModule, MatTooltipModule];
+const MaterialModules = [
+  MatIconModule,
+  MatButtonModule,
+  MatMenuModule,
+  MatToolbarModule,
+  MatTooltipModule,
+  MatTooltipModule,
+];
 
 @Component({
   selector: 'app-nav-bar',
-  standalone: true,
   imports: [RouterLink, UpperCasePipe, ...MaterialModules],
-  templateUrl: './nav-bar.component.html',
+  templateUrl: './nav-bar.html',
 })
-export class NavBarComponent {
+export class NavBar {
   readonly #router = inject(Router);
-  readonly #appStore = inject(AppStoreService);
-  readonly #appNav = inject(AppNavService);
+  readonly #appStore = inject(AppStore);
+  readonly #appNavStore = inject(AppNavStore);
   readonly #destroyRef = inject(DestroyRef);
 
   currentUser = signal<any>(null);
@@ -35,7 +41,7 @@ export class NavBarComponent {
   }
 
   toggleMenu() {
-    this.#appNav.toggleMenu();
+    this.#appNavStore.toggleMenu();
   }
 
   signOut() {

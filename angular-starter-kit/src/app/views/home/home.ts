@@ -1,17 +1,22 @@
 import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component, DestroyRef, inject, signal } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  DestroyRef,
+  inject,
+  signal,
+} from '@angular/core';
 import { takeUntilDestroyed, toObservable } from '@angular/core/rxjs-interop';
-import { AppStoreService } from '../../services/app-store.service';
+import { AppStore } from '../../services/app-store';
 
 @Component({
   selector: 'app-home',
-  standalone: true,
   imports: [CommonModule],
-  templateUrl: './home.component.html',
+  templateUrl: './home.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class HomeComponent {
-  readonly #appStore = inject(AppStoreService);
+export class Home {
+  readonly #appStore = inject(AppStore);
   readonly #destroyRef = inject(DestroyRef);
 
   currentUser = signal<any>(null);

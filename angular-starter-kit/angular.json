@@ -37,12 +37,9 @@
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:application",
+          "builder": "@angular/build:application",
           "options": {
-            "outputPath": "dist/angular-starter-kit",
-            "index": "src/index.html",
             "browser": "src/main.ts",
-            "polyfills": [],
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
@@ -51,8 +48,9 @@
                 "input": "public"
               }
             ],
-            "styles": ["src/styles.scss"],
-            "scripts": [],
+            "styles": [
+              "src/styles.scss"
+            ],
             "allowedCommonJsDependencies": ["lodash", "luxon"],
             "webWorkerTsConfig": "tsconfig.worker.json"
           },
@@ -88,7 +86,7 @@
           "defaultConfiguration": "production"
         },
         "serve": {
-          "builder": "@angular-devkit/build-angular:dev-server",
+          "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
               "buildTarget": "angular-starter-kit:build:production"
@@ -100,12 +98,11 @@
           "defaultConfiguration": "development"
         },
         "extract-i18n": {
-          "builder": "@angular-devkit/build-angular:extract-i18n"
+          "builder": "@angular/build:extract-i18n"
         },
         "test": {
-          "builder": "@angular-devkit/build-angular:karma",
+          "builder": "@angular/build:karma",
           "options": {
-            "polyfills": [],
             "tsConfig": "tsconfig.spec.json",
             "inlineStyleLanguage": "scss",
             "assets": [
@@ -114,8 +111,9 @@
                 "input": "public"
               }
             ],
-            "styles": ["src/styles.scss"],
-            "scripts": [],
+            "styles": [
+              "src/styles.scss"
+            ],
             "webWorkerTsConfig": "tsconfig.worker.json"
           }
         }

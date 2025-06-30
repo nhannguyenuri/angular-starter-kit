@@ -13,18 +13,17 @@ import { Subject } from 'rxjs';
  * valueAccessor = inject(ValueAccessorDirective<number>)
  */
 @Directive({
-  standalone: true,
   providers: [
     {
       provide: NG_VALUE_ACCESSOR,
-      useExisting: forwardRef(() => ControlValueAccessorDirective),
+      useExisting: forwardRef(() => ControlValueAccessorD),
       multi: true,
     },
   ],
 })
-export class ControlValueAccessorDirective<T> implements ControlValueAccessor, OnDestroy {
-  readonly #onChange: any;
-  readonly #onTouched: any;
+export class ControlValueAccessorD<T> implements ControlValueAccessor, OnDestroy {
+  #onChange: any;
+  #onTouched: any;
 
   readonly #valueSubject$ = new Subject<T>();
   readonly #disabledSubject$ = new Subject<boolean>();
