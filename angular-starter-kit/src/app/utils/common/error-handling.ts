@@ -5,7 +5,7 @@ export const runFnInTryCatch = (fn: any, ...args: any) => {
       success: true,
       data,
     };
-  } catch (err) {
+  } catch (err: any) {
     return {
       error: true,
       message: err?.message,
@@ -20,7 +20,7 @@ export const runFnInTryCatchAsync = async (fn: any, ...args: any) => {
       success: true,
       data,
     };
-  } catch (err) {
+  } catch (err: any) {
     return {
       error: true,
       message: err?.message,
