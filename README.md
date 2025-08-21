@@ -4,15 +4,15 @@
 
 **Nhan Nguyen**
 
-* [github/nhannguyendevjs](https://github.com/nhannguyendevjs)
-* [twitter/nhannguyendevjs](https://twitter.com/nhannguyendevjs)
-* [linkedin/nhannguyendevjs](https://www.linkedin.com/in/nhannguyendevjs)
-* [dev.to/nhannguyendevjs](https://dev.to/nhannguyendevjs)
-* [medium/nhannguyendevjs](https://medium.com/@nhannguyendevjs)
+* [github/nhannguyenuri](https://github.com/nhannguyenuri)
+* [twitter/nhannguyenuri](https://twitter.com/nhannguyenuri)
+* [linkedin/nhannguyenuri](https://www.linkedin.com/in/nhannguyenuri)
+* [dev.to/nhannguyenuri](https://dev.to/nhannguyenuri)
+* [medium/nhannguyenuri](https://medium.com/@nhannguyenuri)
 
 ## License
 
-Copyright © 2025, [Nhan Nguyen](https://github.com/nhannguyendevjs).
+Copyright © 2025, [Nhan Nguyen](https://github.com/nhannguyenuri).
 
 Released under the [MIT License](LICENSE).
 
