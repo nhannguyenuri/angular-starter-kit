@@ -52,9 +52,7 @@ export const useSignalStore = (options = {}) => {
     return store;
   };
 
-  getStore.add = (
-    item: SignalStoreItem,
-  ): SignalStoreStatus<SignalStoreItem> => {
+  getStore.add = (item: SignalStoreItem): SignalStoreStatus<SignalStoreItem> => {
     if (!item) {
       return {
         error: true,
@@ -80,9 +78,7 @@ export const useSignalStore = (options = {}) => {
     };
   };
 
-  getStore.update = (
-    item: SignalStoreItem,
-  ): SignalStoreStatus<SignalStoreItem> => {
+  getStore.update = (item: SignalStoreItem): SignalStoreStatus<SignalStoreItem> => {
     if (store.size === 0) {
       return {
         error: true,

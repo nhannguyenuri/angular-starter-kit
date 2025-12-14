@@ -1,12 +1,5 @@
 import { Pipe, PipeTransform, inject } from '@angular/core';
-import {
-  DomSanitizer,
-  SafeHtml,
-  SafeResourceUrl,
-  SafeScript,
-  SafeStyle,
-  SafeUrl,
-} from '@angular/platform-browser';
+import { DomSanitizer, SafeHtml, SafeResourceUrl, SafeScript, SafeStyle, SafeUrl } from '@angular/platform-browser';
 
 /**
  * @example
@@ -19,10 +12,7 @@ import {
 export class Safe implements PipeTransform {
   readonly #sanitizer = inject(DomSanitizer);
 
-  transform(
-    value: string,
-    type: string,
-  ): SafeHtml | SafeStyle | SafeScript | SafeUrl | SafeResourceUrl {
+  transform(value: string, type: string): SafeHtml | SafeStyle | SafeScript | SafeUrl | SafeResourceUrl {
     switch (type) {
       case 'html':
         return this.#sanitizer.bypassSecurityTrustHtml(value);

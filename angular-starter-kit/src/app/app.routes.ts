@@ -1,7 +1,7 @@
 import { Routes } from '@angular/router';
 import { environment } from '../environments/environment';
-import { authChildGuard } from './guards/auth-child';
 import { authGuard } from './guards/auth';
+import { authChildGuard } from './guards/auth-child';
 import { guestGuard } from './guards/guest';
 
 export const routes: Routes = [
@@ -60,7 +60,7 @@ export const routes: Routes = [
     loadComponent: () => import('./views/shell/shell').then((c) => c.Shell),
   },
   /* ---------------- *
-   * Note found route *
+   * Not found route *
    * ---------------- */
   {
     path: '**',

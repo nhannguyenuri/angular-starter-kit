@@ -5,7 +5,7 @@ import { SwUpdate } from '@angular/service-worker';
 import { TranslocoService } from '@jsverse/transloco';
 import { timer } from 'rxjs';
 import { environment } from '../environments/environment';
-import { LocalStorageKeys } from './enums/local-storage';
+import { LOCAL_STORAGE } from './enums/local-storage';
 import { AppStore } from './services/app-store';
 import { AuthStore } from './services/auth-store';
 
@@ -52,17 +52,15 @@ export class App {
   }
 
   #registerRouterEvents() {
-    this.#router.events
-      .pipe(takeUntilDestroyed(this.#destroyRef))
-      .subscribe((navigationEvent) => {
-        if (navigationEvent instanceof NavigationEnd) {
-          const { urlAfterRedirects } = navigationEvent;
+    this.#router.events.pipe(takeUntilDestroyed(this.#destroyRef)).subscribe((navigationEvent) => {
+      if (navigationEvent instanceof NavigationEnd) {
+        const { urlAfterRedirects } = navigationEvent;
 
-          if (!urlAfterRedirects.includes('/sign-in')) {
-            localStorage.setItem(LocalStorageKeys.lastUrl, urlAfterRedirects);
-          }
+        if (!urlAfterRedirects.includes('/sign-in')) {
+          localStorage.setItem(LOCAL_STORAGE.lastUrl, urlAfterRedirects);
         }
-      });
+      }
+    });
   }
 
   #registerServiceWorkerUpgrade() {
@@ -72,9 +70,7 @@ export class App {
         .subscribe(() => {
           this.#swUpdate.checkForUpdate().then((res) => {
             if (res) {
-              if (
-                confirm('A new version is available, do you want to load it?')
-              ) {
+              if (confirm('A new version is available, do you want to load it?')) {
                 window.location.reload();
               }
             }

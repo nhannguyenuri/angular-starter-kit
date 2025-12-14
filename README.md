@@ -5,10 +5,10 @@
 **Nhan Nguyen**
 
 * [github/nhannguyenuri](https://github.com/nhannguyenuri)
-* [twitter/nhannguyenuri](https://twitter.com/nhannguyenuri)
 * [linkedin/nhannguyenuri](https://www.linkedin.com/in/nhannguyenuri)
-* [dev.to/nhannguyenuri](https://dev.to/nhannguyenuri)
+* [twitter/nhannguyenuri](https://twitter.com/nhannguyenuri)
 * [medium/nhannguyenuri](https://medium.com/@nhannguyenuri)
+* [dev.to/nhannguyenuri](https://dev.to/nhannguyenuri)
 
 ## License
 
@@ -25,19 +25,13 @@ Released under the [MIT License](LICENSE).
 ![CSS](https://img.shields.io/badge/CSS-2F4BD8?logo=css3&logoColor=white&style=for-the-badge)
 ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=white&style=for-the-badge)
 ![Angular](https://img.shields.io/badge/Angular-DD0031?logo=angular&logoColor=white&style=for-the-badge)
-![Nodejs](https://img.shields.io/badge/Nodejs-43853d?logo=Node.js&logoColor=white&style=for-the-badge)
-![Golang](https://img.shields.io/badge/Go-ffffff?logo=go&logoColor=bllue&style=for-the-badge)
-![MongoDB](https://img.shields.io/badge/MongoDB-13aa52?logo=mongodb&logoColor=white&style=for-the-badge)
-![Postgres](https://img.shields.io/badge/Postgres-316192?logo=postgresql&logoColor=white&style=for-the-badge)
-![Docker](https://img.shields.io/badge/Docker-46a2f1?logo=docker&logoColor=white&style=for-the-badge)
-![Prisma](https://img.shields.io/badge/Prisma-ffffff?logo=prisma&logoColor=black&style=for-the-badge)
 
 ## Initial Project
 
 ### Init Angular project
 
 ```bash
-ng new angular-starter-kit --standalone=true --style=scss --skip-git=true --skip-tests=true
+ng new angular-starter-kit --skip-git=true --skip-tests
 ```
 
 ```bash
@@ -56,40 +50,10 @@ ng add @angular/material
 ng add @angular/pwa
 ```
 
-### Tailwind CSS
-
-Install Tailwind CSS. Install **@tailwindcss/postcss** and its peer dependencies via npm.
-
-```bash
-npm install tailwindcss @tailwindcss/postcss postcss --force
-```
-
-Configure PostCSS Plugins. Create a **.postcssrc.json** file in the root of your project and add the **@tailwindcss/postcss** plugin to your PostCSS configuration.
-
-```json
-{
-  "plugins": {
-    "@tailwindcss/postcss": {}
-  }
-}
-```
-
-Import Tailwind CSS. Add an **@use** to **./src/styles.scss** that imports Tailwind CSS.
-
-```scss
-@import "tailwindcss";
-```
+### Prettier
 
 ```bash
 npm install -D prettier prettier-plugin-tailwindcss
-```
-
-```
-// .prettierrc
-{
-  ...
-  "plugins": ["prettier-plugin-tailwindcss"]
-}
 ```
 
 ### Transloco
@@ -104,22 +68,10 @@ ng add @jsverse/transloco
 npm init playwright@latest
 ```
 
-### Vitest
-
-```bash
-npm i -D vitest @vitest/coverage-istanbul @vitest/coverage-v8 @vitest/ui
-```
-
-### Prettier
-
-```bash
-npm i -D prettier
-```
-
 ### Libraries
 
 ```bash
-npm i lodash luxon @ngrx/store animate.css ngx-skeleton-loader ngx-toastr uuid nanoid zod hotkeys-js swiper apexcharts ng-apexcharts
+npm i lodash luxon animate.css ngx-skeleton-loader uuid zod @ngrx/store ngx-toastr nanoid hotkeys-js swiper apexcharts ng-apexcharts
 ```
 
 ```bash
