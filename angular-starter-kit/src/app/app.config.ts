@@ -1,12 +1,9 @@
-import { provideImageKitLoader } from '@angular/common';
 import { provideHttpClient, withFetch, withInterceptors } from '@angular/common/http';
-import { ApplicationConfig, importProvidersFrom, isDevMode, provideBrowserGlobalErrorListeners, provideZonelessChangeDetection } from '@angular/core';
-import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { ApplicationConfig, isDevMode, provideBrowserGlobalErrorListeners } from '@angular/core';
 import { provideRouter, withComponentInputBinding, withViewTransitions } from '@angular/router';
 import { provideServiceWorker } from '@angular/service-worker';
 import { provideTransloco } from '@jsverse/transloco';
-import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
-import { environment } from '../environments/environment';
+import { provideNgxSkeletonLoader } from 'ngx-skeleton-loader';
 import { routes } from './app.routes';
 import { authInterceptor } from './interceptors/auth';
 import { authorizationInterceptor } from './interceptors/authorization';
@@ -16,8 +13,6 @@ import { TranslocoHttpLoader } from './transloco-loader';
 export const appConfig: ApplicationConfig = {
   providers: [
     provideBrowserGlobalErrorListeners(),
-    provideZonelessChangeDetection(),
-    provideAnimationsAsync(),
     provideHttpClient(withInterceptors([httpCacheInterceptor, authorizationInterceptor, authInterceptor])),
     provideRouter(routes, withComponentInputBinding(), withViewTransitions()),
     provideServiceWorker('ngsw-worker.js', {
@@ -27,16 +22,14 @@ export const appConfig: ApplicationConfig = {
     provideHttpClient(withFetch()),
     provideTransloco({
       config: {
-        availableLangs: ['en', 'es'],
-        defaultLang: environment.language,
-        fallbackLang: environment.language,
+        availableLangs: ['en', 'vi'],
+        defaultLang: 'en',
         // Remove this option if your application doesn't support changing language in runtime.
         reRenderOnLangChange: true,
         prodMode: !isDevMode(),
       },
       loader: TranslocoHttpLoader,
     }),
-    importProvidersFrom([NgxSkeletonLoaderModule.forRoot()]),
-    provideImageKitLoader('https://ik.imagekit.io/9mx5jcsss/'),
+    provideNgxSkeletonLoader(),
   ],
 };

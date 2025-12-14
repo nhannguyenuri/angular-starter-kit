@@ -1,9 +1,9 @@
 // import { HttpClient } from '@angular/common/http';
 import { Injectable /** inject **/ } from '@angular/core';
-// import { APIs } from '../enums/api.enum';
+// import { APIS } from '../enums/apis.enum';
 import { of } from 'rxjs';
-import { LocalStorageKeys } from '../enums/local-storage';
-import * as AuthSchema from '../schemas/auth';
+import { LOCAL_STORAGE } from '../enums/local-storage';
+import { SignInPayload } from '../schemas/auth';
 
 @Injectable({
   providedIn: 'root',
@@ -12,12 +12,12 @@ export class AuthStore {
   // readonly #http = inject(HttpClient);
 
   isSignedIn() {
-    const accessToken = localStorage.getItem(LocalStorageKeys.authorization);
+    const accessToken = localStorage.getItem(LOCAL_STORAGE.authorization);
     return !!accessToken;
   }
 
-  signIn(signInPayload: AuthSchema.SignInPayload) {
-    // return this.#http.post<AuthSchema.SignInResponse>(APIs.auth.signIn, signInPayload);
+  signIn(signInPayload: SignInPayload) {
+    // return this.#http.post<SignInResponse>(APIS.auth.signIn, signInPayload);
     return of({
       success: true,
       data: {
@@ -36,7 +36,7 @@ export class AuthStore {
   }
 
   me() {
-    // return this.#http.get<AuthSchema.MeResponse>(APIs.auth.me);
+    // return this.#http.get<MeResponse>(APIS.auth.me);
     return of({
       success: true,
       data: {

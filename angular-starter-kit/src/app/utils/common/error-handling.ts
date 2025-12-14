@@ -1,6 +1,7 @@
 export const runFnInTryCatch = (fn: any, ...args: any) => {
   try {
     const data = fn(...args);
+
     return {
       success: true,
       data,
@@ -16,6 +17,7 @@ export const runFnInTryCatch = (fn: any, ...args: any) => {
 export const runFnInTryCatchAsync = async (fn: any, ...args: any) => {
   try {
     const data = await fn(...args);
+
     return {
       success: true,
       data,

@@ -1,4 +1,4 @@
-export const ShellActions = {
+export const SHELL_ACTIONS = {
   signIn: 'signIn',
   signOut: 'signOut',
   redirect: 'redirect',

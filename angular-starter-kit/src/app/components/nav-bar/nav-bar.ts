@@ -10,14 +10,7 @@ import { Router, RouterLink } from '@angular/router';
 import { AppNavStore } from '../../services/app-nav-store';
 import { AppStore } from '../../services/app-store';
 
-const MaterialModules = [
-  MatIconModule,
-  MatButtonModule,
-  MatMenuModule,
-  MatToolbarModule,
-  MatTooltipModule,
-  MatTooltipModule,
-];
+const MaterialModules = [MatIconModule, MatButtonModule, MatMenuModule, MatToolbarModule, MatTooltipModule, MatTooltipModule];
 
 @Component({
   selector: 'app-nav-bar',

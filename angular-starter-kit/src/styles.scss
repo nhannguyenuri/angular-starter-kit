@@ -1,9 +1,6 @@
 // Vendors
 @use '../node_modules/animate.css/animate.min.css';
 
-// Material
-@use './styles/material/theme';
-
 // Common
 @use './styles/common/variables';
 
@@ -32,6 +29,9 @@
 
 // App
 @use './styles/app';
+
+// Angular material
+@use './styles/material/theme';
 
 // Tailwind
 @use './tailwind.css';
